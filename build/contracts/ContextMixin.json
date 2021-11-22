@@ -10,7 +10,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.4.22 <0.9.0;\n\nabstract contract ContextMixin {\n    function msgSender()\n        internal\n        view\n        returns (address payable sender)\n    {\n        if (msg.sender == address(this)) {\n            bytes memory array = msg.data;\n            uint256 index = msg.data.length;\n            assembly {\n                // Load the 32 bytes word from memory with the address on the lower 20 bytes, and mask those.\n                sender := and(\n                    mload(add(array, index)),\n                    0xffffffffffffffffffffffffffffffffffffffff\n                )\n            }\n        } else {\n            sender = payable(msg.sender);\n        }\n        return sender;\n    }\n}",
-  "sourcePath": "/Users/klleon/workspace/blockchain/vhuman/contracts/common/meta-transactions/ContentMixin.sol",
+  "sourcePath": "/Users/weather/workspace/blockchain/vhuman/contracts/common/meta-transactions/ContentMixin.sol",
   "ast": {
     "absolutePath": "project:/contracts/common/meta-transactions/ContentMixin.sol",
     "exportedSymbols": {
@@ -1185,7 +1185,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-22T02:58:01.174Z",
+  "updatedAt": "2021-11-22T04:46:18.791Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

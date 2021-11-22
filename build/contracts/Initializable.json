@@ -10,7 +10,7 @@
   "sourceMap": "34:165:19:-:0;;;77:5;63:19;;;;;;;;;;;;;;;;;;;;34:165;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "34:165:19:-:0;;;;;",
   "source": "pragma solidity >=0.4.22 <0.9.0;\n\ncontract Initializable {\n    bool inited = false;\n\n    modifier initializer() {\n        require(!inited, \"already inited\");\n        _;\n        inited = true;\n    }\n}",
-  "sourcePath": "/Users/klleon/workspace/blockchain/vhuman/contracts/common/meta-transactions/Initializable.sol",
+  "sourcePath": "/Users/weather/workspace/blockchain/vhuman/contracts/common/meta-transactions/Initializable.sol",
   "ast": {
     "absolutePath": "project:/contracts/common/meta-transactions/Initializable.sol",
     "exportedSymbols": {
@@ -527,7 +527,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-22T02:58:01.176Z",
+  "updatedAt": "2021-11-22T04:46:18.797Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

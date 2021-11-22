@@ -20,8 +20,6 @@
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
-console.log(HDWalletProvider);
-
 const fs = require("fs");
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 
@@ -55,6 +53,13 @@ module.exports = {
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
+    },
+    rinkeby: {
+      provider: () =>
+        new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/e17a99f4e35344308d1f975fa293c49b`),
+      network_id: 4,
+      gas: 4500000,
+      gasPrice: 10000000000
     },
     // Another network with more advanced options...
     // advanced: {
