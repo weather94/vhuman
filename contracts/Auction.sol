@@ -3,7 +3,7 @@ pragma solidity >=0.4.22 <0.9.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./ERC721Tradable.sol";
 
-contract Human is ERC721Tradable {
+contract Auction {
 
   struct VHuman {
     string name;
