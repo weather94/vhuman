@@ -1,4 +1,4 @@
-pragma solidity ^0.8.2;
+pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/governance/Governor.sol";
 import "@openzeppelin/contracts/governance/extensions/GovernorSettings.sol";

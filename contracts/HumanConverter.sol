@@ -1,10 +1,10 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./HumanStaking.sol";
+import "./HumanStaker.sol";
 
 // 수수료와 관련된 코드도 넣어야됨.
-contract HumanConvert is HumanStaking {
+contract HumanConverter is HumanStaker {
 
   enum STATUS { WAIT, CONVERT, SUCCESS, CANCEL, ERROR, COMPLAIN, END }
 
@@ -29,7 +29,7 @@ contract HumanConvert is HumanStaking {
   mapping (address => Converter) public converter;
   Request[] public requests;
 
-  constructor (address _humanContract) HumanStaking(_humanContract) {}
+  constructor () {}
 
   modifier onlyConverter() {
     require(converter[msg.sender].amount >= 0); // 이거 알아내야함 어떻게할지
