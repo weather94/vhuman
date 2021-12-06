@@ -11,6 +11,7 @@ contract SHumanERC20 is ERC20, ERC20Burnable, Ownable, ERC20Permit, ERC20Votes {
 
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
+        _delegate(to, to);
     }
 
     // The following functions are overrides required by Solidity.

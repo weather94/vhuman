@@ -22,7 +22,12 @@ contract HumanERC20Staker is Ownable {
     address thisContract = address(this);
     human.transferFrom(msg.sender, thisContract, balance);
     stakes[msg.sender] += balance;
-    uint mintBalance = balance/human.balanceOf(thisContract)*shuman.totalSupply();
+    uint mintBalance;
+    if (shuman.totalSupply() == 0) {
+      mintBalance = balance;
+    } else {
+      mintBalance = balance/human.balanceOf(thisContract)*shuman.totalSupply();
+    }
     shuman.mint(msg.sender, mintBalance);
   }
 
