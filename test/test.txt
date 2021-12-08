@@ -1,0 +1,12 @@
+await humanERC20Instance.approve(humanERC20Staker.address,web3.utils.toWei("10000000","ether"),{from:accounts[0],});
+
+await humanERC20Staker.stake(web3.utils.toWei("1000000", "ether"), { from: accounts[0], });
+
+calldata=web3.eth.abi.encodeFunctionCall({name:"mint",type:"function",inputs:[{type:"address",name:"to",},{type:"string",name:"name",},{type:"string",name:"description",},{type:"string",name:"hash",},],},[accounts[0],"Eunha","19yearsold,schoolgirl","0x123123123123"]);
+
+p1 = humanGovernor.propose([humanNFT.address], [0], [calldata], "MINT HUMAN2", { from: accounts[0] }).on('receipt', (result) => { proposalId = result.logs[0]?.args?.proposalId });
+
+humanGovernor.castVote(proposalId, 1)
+
+p2 = humanGovernor.execute([humanNFT.address], [0], [calldata], web3.utils.keccak256("MINT HUMAN2"), { from: accounts[0] }).on('receipt', (result) => { executeResult = result });
+

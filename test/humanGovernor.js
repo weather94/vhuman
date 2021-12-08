@@ -61,7 +61,7 @@ contract("HumanGovernor", (accounts) => {
 
     const result = await humanGovernor.propose(
       [humanNFT.address],
-      [10],
+      [13],
       [calldata],
       "MINT HUMAN!",
       {
@@ -70,14 +70,16 @@ contract("HumanGovernor", (accounts) => {
     );
 
     proposalId = result?.logs[0]?.args?.proposalId;
-
     assert.equal(!!proposalId, true, " check proposalId => exist");
-
     // 0 = Against (반대), 1 = For (찬성), 2 = Abstain (기권),
 
-    // const voteBalance = await humanGovernor.castVote(proposalId, 1);
+    // afterEach(async () => {
+    //   await web3.utils.advanceBlockAtTime(now.plus(20).toNumber());
 
-    // assert.equal(voteBalance, 100, "voteBalance =? 100");
+    //   const voteBalance = await humanGovernor.castVote(proposalId, 1);
+    // });
+
+    // assert.equal(voteBalance, 100123, "voteBalance =? 100");
   });
 
   // it("send token", async () => {

@@ -21,7 +21,8 @@ contract HumanConverter is HumanStaker {
   }
 
   struct Converter {
-    uint amount;
+    uint total;
+    uint balance;
     uint convertCount;
     uint complainCount;
   }
@@ -32,7 +33,7 @@ contract HumanConverter is HumanStaker {
   constructor () {}
 
   modifier onlyConverter() {
-    require(converter[msg.sender].amount >= 0); // 이거 알아내야함 어떻게할지
+    require(converter[msg.sender].total >= 0); // 이거 알아내야함 어떻게할지
     _;
   }
 
@@ -41,15 +42,20 @@ contract HumanConverter is HumanStaker {
     _;
   }
 
-  function request(string memory _sourceUri, string memory _humanNumber, uint _tokenId) public {
+  function addConverter(address converter) public onlyOwner {
+    
+  }
+
+  function request(string memory _sourceUri, address _converter, string memory _humanNumber, uint _tokenId) public {
     // stakes[_tokenId];
     // 스테이킹중이거나, 본인 소유인지 확인
-    requests.push(Request(msg.sender, address(0), _sourceUri, "", _humanNumber, STATUS.WAIT, _tokenId, 0, 0));
+    requests.push(Request(msg.sender, _converter, _sourceUri, "", _humanNumber, STATUS.WAIT, _tokenId, 0, 0));
   }
 
   function start(uint _requestId) public onlyConverter {
     Request storage _request = requests[_requestId];
     require(_request.status == STATUS.WAIT);
+    require(_request.converter == address(0) || _request.converter == msg.sender);
     
     _request.status = STATUS.CONVERT;
     _request.converter = msg.sender;
@@ -72,6 +78,6 @@ contract HumanConverter is HumanStaker {
 
   function complain(uint _requsetId) public {
     Request storage _request = requests[_requsetId];
-    // 여기서 이제 그거 시작한다. 투표 같은거 시작하기.
+    converter[_request.converter].complainCount += 1;
   }
 }
