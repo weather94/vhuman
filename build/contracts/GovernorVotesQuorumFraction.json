@@ -643,75 +643,75 @@
     "absolutePath": "@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction.sol",
     "exportedSymbols": {
       "Address": [
-        6501
+        4931
       ],
       "Context": [
-        6523
+        4953
       ],
       "Counters": [
-        6597
+        5027
       ],
       "ECDSA": [
-        7404
+        5834
       ],
       "EIP712": [
-        7558
+        5988
       ],
       "ERC165": [
-        7582
+        6012
       ],
       "ERC20": [
-        3827
+        2257
       ],
       "ERC20Permit": [
-        4807
+        3237
       ],
       "ERC20Votes": [
-        4613
+        3043
       ],
       "Governor": [
-        1313
+        931
       ],
       "GovernorVotes": [
-        3139
+        1610
       ],
       "GovernorVotesQuorumFraction": [
-        3240
+        1711
       ],
       "IERC165": [
-        7594
+        6024
       ],
       "IERC20": [
-        3905
+        2335
       ],
       "IERC20Metadata": [
-        4638
+        3068
       ],
       "IERC20Permit": [
-        4843
+        3273
       ],
       "IGovernor": [
-        1549
+        1167
       ],
       "Math": [
-        7682
+        6112
       ],
       "SafeCast": [
-        8075
+        6505
       ],
       "Strings": [
-        6800
+        5230
       ],
       "Timers": [
-        7014
+        5444
       ]
     },
-    "id": 3241,
+    "id": 1712,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3141,
+        "id": 1612,
         "literals": [
           "solidity",
           "^",
@@ -719,17 +719,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "122:23:10"
+        "src": "122:23:6"
       },
       {
         "absolutePath": "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol",
         "file": "./GovernorVotes.sol",
-        "id": 3142,
+        "id": 1613,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3241,
-        "sourceUnit": 3140,
-        "src": "147:29:10",
+        "scope": 1712,
+        "sourceUnit": 1611,
+        "src": "147:29:6",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -738,51 +738,51 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 3144,
+              "id": 1615,
               "name": "GovernorVotes",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3139,
-              "src": "414:13:10"
+              "referencedDeclaration": 1610,
+              "src": "414:13:6"
             },
-            "id": 3145,
+            "id": 1616,
             "nodeType": "InheritanceSpecifier",
-            "src": "414:13:10"
+            "src": "414:13:6"
           }
         ],
         "canonicalName": "GovernorVotesQuorumFraction",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 3143,
+          "id": 1614,
           "nodeType": "StructuredDocumentation",
-          "src": "178:186:10",
+          "src": "178:186:6",
           "text": " @dev Extension of {Governor} for voting weight extraction from an {ERC20Votes} token and a quorum expressed as a\n fraction of the total supply.\n _Available since v4.3._"
         },
         "fullyImplemented": false,
-        "id": 3240,
+        "id": 1711,
         "linearizedBaseContracts": [
-          3240,
-          3139,
-          1313,
-          1549,
-          7558,
-          7582,
-          7594,
-          6523
+          1711,
+          1610,
+          931,
+          1167,
+          5988,
+          6012,
+          6024,
+          4953
         ],
         "name": "GovernorVotesQuorumFraction",
-        "nameLocation": "383:27:10",
+        "nameLocation": "383:27:6",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 3147,
+            "id": 1618,
             "mutability": "mutable",
             "name": "_quorumNumerator",
-            "nameLocation": "450:16:10",
+            "nameLocation": "450:16:6",
             "nodeType": "VariableDeclaration",
-            "scope": 3240,
-            "src": "434:32:10",
+            "scope": 1711,
+            "src": "434:32:6",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -790,10 +790,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 3146,
+              "id": 1617,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "434:7:10",
+              "src": "434:7:6",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -803,24 +803,24 @@
           },
           {
             "anonymous": false,
-            "id": 3153,
+            "id": 1624,
             "name": "QuorumNumeratorUpdated",
-            "nameLocation": "479:22:10",
+            "nameLocation": "479:22:6",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 3152,
+              "id": 1623,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3149,
+                  "id": 1620,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "oldQuorumNumerator",
-                  "nameLocation": "510:18:10",
+                  "nameLocation": "510:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3153,
-                  "src": "502:26:10",
+                  "scope": 1624,
+                  "src": "502:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -828,10 +828,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3148,
+                    "id": 1619,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "502:7:10",
+                    "src": "502:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -841,14 +841,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 3151,
+                  "id": 1622,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "newQuorumNumerator",
-                  "nameLocation": "538:18:10",
+                  "nameLocation": "538:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3153,
-                  "src": "530:26:10",
+                  "scope": 1624,
+                  "src": "530:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -856,10 +856,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3150,
+                    "id": 1621,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "530:7:10",
+                    "src": "530:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -868,26 +868,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "501:56:10"
+              "src": "501:56:6"
             },
-            "src": "473:85:10"
+            "src": "473:85:6"
           },
           {
             "body": {
-              "id": 3162,
+              "id": 1633,
               "nodeType": "Block",
-              "src": "606:61:10",
+              "src": "606:61:6",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3159,
+                        "id": 1630,
                         "name": "quorumNumeratorValue",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3155,
-                        "src": "639:20:10",
+                        "referencedDeclaration": 1626,
+                        "src": "639:20:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -901,18 +901,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 3158,
+                      "id": 1629,
                       "name": "_updateQuorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3239,
-                      "src": "616:22:10",
+                      "referencedDeclaration": 1710,
+                      "src": "616:22:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 3160,
+                    "id": 1631,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -920,20 +920,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "616:44:10",
+                    "src": "616:44:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3161,
+                  "id": 1632,
                   "nodeType": "ExpressionStatement",
-                  "src": "616:44:10"
+                  "src": "616:44:6"
                 }
               ]
             },
-            "id": 3163,
+            "id": 1634,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -941,18 +941,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3156,
+              "id": 1627,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3155,
+                  "id": 1626,
                   "mutability": "mutable",
                   "name": "quorumNumeratorValue",
-                  "nameLocation": "584:20:10",
+                  "nameLocation": "584:20:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3163,
-                  "src": "576:28:10",
+                  "scope": 1634,
+                  "src": "576:28:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -960,10 +960,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3154,
+                    "id": 1625,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "576:7:10",
+                    "src": "576:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -972,73 +972,73 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "575:30:10"
+              "src": "575:30:6"
             },
             "returnParameters": {
-              "id": 3157,
+              "id": 1628,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "606:0:10"
+              "src": "606:0:6"
             },
-            "scope": 3240,
-            "src": "564:103:10",
+            "scope": 1711,
+            "src": "564:103:6",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 3170,
+              "id": 1641,
               "nodeType": "Block",
-              "src": "738:40:10",
+              "src": "738:40:6",
               "statements": [
                 {
                   "expression": {
-                    "id": 3168,
+                    "id": 1639,
                     "name": "_quorumNumerator",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3147,
-                    "src": "755:16:10",
+                    "referencedDeclaration": 1618,
+                    "src": "755:16:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3167,
-                  "id": 3169,
+                  "functionReturnParameters": 1638,
+                  "id": 1640,
                   "nodeType": "Return",
-                  "src": "748:23:10"
+                  "src": "748:23:6"
                 }
               ]
             },
             "functionSelector": "a7713a70",
-            "id": 3171,
+            "id": 1642,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "quorumNumerator",
-            "nameLocation": "682:15:10",
+            "nameLocation": "682:15:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3164,
+              "id": 1635,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "697:2:10"
+              "src": "697:2:6"
             },
             "returnParameters": {
-              "id": 3167,
+              "id": 1638,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3166,
+                  "id": 1637,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3171,
-                  "src": "729:7:10",
+                  "scope": 1642,
+                  "src": "729:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1046,10 +1046,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3165,
+                    "id": 1636,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "729:7:10",
+                    "src": "729:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1058,71 +1058,71 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "728:9:10"
+              "src": "728:9:6"
             },
-            "scope": 3240,
-            "src": "673:105:10",
+            "scope": 1711,
+            "src": "673:105:6",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3178,
+              "id": 1649,
               "nodeType": "Block",
-              "src": "851:27:10",
+              "src": "851:27:6",
               "statements": [
                 {
                   "expression": {
                     "hexValue": "313030",
-                    "id": 3176,
+                    "id": 1647,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "868:3:10",
+                    "src": "868:3:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_rational_100_by_1",
                       "typeString": "int_const 100"
                     },
                     "value": "100"
                   },
-                  "functionReturnParameters": 3175,
-                  "id": 3177,
+                  "functionReturnParameters": 1646,
+                  "id": 1648,
                   "nodeType": "Return",
-                  "src": "861:10:10"
+                  "src": "861:10:6"
                 }
               ]
             },
             "functionSelector": "97c3d334",
-            "id": 3179,
+            "id": 1650,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "quorumDenominator",
-            "nameLocation": "793:17:10",
+            "nameLocation": "793:17:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3172,
+              "id": 1643,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "810:2:10"
+              "src": "810:2:6"
             },
             "returnParameters": {
-              "id": 3175,
+              "id": 1646,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3174,
+                  "id": 1645,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3179,
-                  "src": "842:7:10",
+                  "scope": 1650,
+                  "src": "842:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1130,10 +1130,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3173,
+                    "id": 1644,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "842:7:10",
+                    "src": "842:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1142,22 +1142,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "841:9:10"
+              "src": "841:9:6"
             },
-            "scope": 3240,
-            "src": "784:94:10",
+            "scope": 1711,
+            "src": "784:94:6",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
             "baseFunctions": [
-              1456
+              1074
             ],
             "body": {
-              "id": 3199,
+              "id": 1670,
               "nodeType": "Block",
-              "src": "968:105:10",
+              "src": "968:105:6",
               "statements": [
                 {
                   "expression": {
@@ -1165,7 +1165,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 3197,
+                    "id": 1668,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1177,7 +1177,7 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 3193,
+                          "id": 1664,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1185,12 +1185,12 @@
                           "leftExpression": {
                             "arguments": [
                               {
-                                "id": 3189,
+                                "id": 1660,
                                 "name": "blockNumber",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3181,
-                                "src": "1011:11:10",
+                                "referencedDeclaration": 1652,
+                                "src": "1011:11:6",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -1205,32 +1205,32 @@
                                 }
                               ],
                               "expression": {
-                                "id": 3187,
+                                "id": 1658,
                                 "name": "token",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3109,
-                                "src": "986:5:10",
+                                "referencedDeclaration": 1580,
+                                "src": "986:5:6",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_ERC20Votes_$4613",
+                                  "typeIdentifier": "t_contract$_ERC20Votes_$3043",
                                   "typeString": "contract ERC20Votes"
                                 }
                               },
-                              "id": 3188,
+                              "id": 1659,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "getPastTotalSupply",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4144,
-                              "src": "986:24:10",
+                              "referencedDeclaration": 2574,
+                              "src": "986:24:6",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                 "typeString": "function (uint256) view external returns (uint256)"
                               }
                             },
-                            "id": 3190,
+                            "id": 1661,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1238,7 +1238,7 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "986:37:10",
+                            "src": "986:37:6",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1251,18 +1251,18 @@
                             "arguments": [],
                             "expression": {
                               "argumentTypes": [],
-                              "id": 3191,
+                              "id": 1662,
                               "name": "quorumNumerator",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3171,
-                              "src": "1026:15:10",
+                              "referencedDeclaration": 1642,
+                              "src": "1026:15:6",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                                 "typeString": "function () view returns (uint256)"
                               }
                             },
-                            "id": 3192,
+                            "id": 1663,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1270,28 +1270,28 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "1026:17:10",
+                            "src": "1026:17:6",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "986:57:10",
+                          "src": "986:57:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         }
                       ],
-                      "id": 3194,
+                      "id": 1665,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "985:59:10",
+                      "src": "985:59:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1303,18 +1303,18 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 3195,
+                        "id": 1666,
                         "name": "quorumDenominator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3179,
-                        "src": "1047:17:10",
+                        "referencedDeclaration": 1650,
+                        "src": "1047:17:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                           "typeString": "function () view returns (uint256)"
                         }
                       },
-                      "id": 3196,
+                      "id": 1667,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1322,53 +1322,53 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1047:19:10",
+                      "src": "1047:19:6",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "985:81:10",
+                    "src": "985:81:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3186,
-                  "id": 3198,
+                  "functionReturnParameters": 1657,
+                  "id": 1669,
                   "nodeType": "Return",
-                  "src": "978:88:10"
+                  "src": "978:88:6"
                 }
               ]
             },
             "functionSelector": "f8ce560a",
-            "id": 3200,
+            "id": 1671,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "quorum",
-            "nameLocation": "893:6:10",
+            "nameLocation": "893:6:6",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 3183,
+              "id": 1654,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "941:8:10"
+              "src": "941:8:6"
             },
             "parameters": {
-              "id": 3182,
+              "id": 1653,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3181,
+                  "id": 1652,
                   "mutability": "mutable",
                   "name": "blockNumber",
-                  "nameLocation": "908:11:10",
+                  "nameLocation": "908:11:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3200,
-                  "src": "900:19:10",
+                  "scope": 1671,
+                  "src": "900:19:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1376,10 +1376,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3180,
+                    "id": 1651,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "900:7:10",
+                    "src": "900:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1388,21 +1388,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "899:21:10"
+              "src": "899:21:6"
             },
             "returnParameters": {
-              "id": 3186,
+              "id": 1657,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3185,
+                  "id": 1656,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3200,
-                  "src": "959:7:10",
+                  "scope": 1671,
+                  "src": "959:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1410,10 +1410,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3184,
+                    "id": 1655,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "959:7:10",
+                    "src": "959:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1422,30 +1422,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "958:9:10"
+              "src": "958:9:6"
             },
-            "scope": 3240,
-            "src": "884:189:10",
+            "scope": 1711,
+            "src": "884:189:6",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3211,
+              "id": 1682,
               "nodeType": "Block",
-              "src": "1170:59:10",
+              "src": "1170:59:6",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3208,
+                        "id": 1679,
                         "name": "newQuorumNumerator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3202,
-                        "src": "1203:18:10",
+                        "referencedDeclaration": 1673,
+                        "src": "1203:18:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1459,18 +1459,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 3207,
+                      "id": 1678,
                       "name": "_updateQuorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3239,
-                      "src": "1180:22:10",
+                      "referencedDeclaration": 1710,
+                      "src": "1180:22:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 3209,
+                    "id": 1680,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1478,54 +1478,54 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1180:42:10",
+                    "src": "1180:42:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3210,
+                  "id": 1681,
                   "nodeType": "ExpressionStatement",
-                  "src": "1180:42:10"
+                  "src": "1180:42:6"
                 }
               ]
             },
             "functionSelector": "06f3f9e6",
-            "id": 3212,
+            "id": 1683,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 3205,
+                "id": 1676,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 3204,
+                  "id": 1675,
                   "name": "onlyGovernance",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 549,
-                  "src": "1155:14:10"
+                  "referencedDeclaration": 167,
+                  "src": "1155:14:6"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1155:14:10"
+                "src": "1155:14:6"
               }
             ],
             "name": "updateQuorumNumerator",
-            "nameLocation": "1088:21:10",
+            "nameLocation": "1088:21:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3203,
+              "id": 1674,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3202,
+                  "id": 1673,
                   "mutability": "mutable",
                   "name": "newQuorumNumerator",
-                  "nameLocation": "1118:18:10",
+                  "nameLocation": "1118:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3212,
-                  "src": "1110:26:10",
+                  "scope": 1683,
+                  "src": "1110:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1533,10 +1533,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3201,
+                    "id": 1672,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1110:7:10",
+                    "src": "1110:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1545,25 +1545,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1109:28:10"
+              "src": "1109:28:6"
             },
             "returnParameters": {
-              "id": 3206,
+              "id": 1677,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1170:0:10"
+              "src": "1170:0:6"
             },
-            "scope": 3240,
-            "src": "1079:150:10",
+            "scope": 1711,
+            "src": "1079:150:6",
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 3238,
+              "id": 1709,
               "nodeType": "Block",
-              "src": "1312:353:10",
+              "src": "1312:353:6",
               "statements": [
                 {
                   "expression": {
@@ -1573,18 +1573,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 3221,
+                        "id": 1692,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 3218,
+                          "id": 1689,
                           "name": "newQuorumNumerator",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3214,
-                          "src": "1343:18:10",
+                          "referencedDeclaration": 1685,
+                          "src": "1343:18:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1596,18 +1596,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 3219,
+                            "id": 1690,
                             "name": "quorumDenominator",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3179,
-                            "src": "1365:17:10",
+                            "referencedDeclaration": 1650,
+                            "src": "1365:17:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                               "typeString": "function () view returns (uint256)"
                             }
                           },
-                          "id": 3220,
+                          "id": 1691,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1615,14 +1615,14 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1365:19:10",
+                          "src": "1365:19:6",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "1343:41:10",
+                        "src": "1343:41:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1630,14 +1630,14 @@
                       },
                       {
                         "hexValue": "476f7665726e6f72566f74657351756f72756d4672616374696f6e3a2071756f72756d4e756d657261746f72206f7665722071756f72756d44656e6f6d696e61746f72",
-                        "id": 3222,
+                        "id": 1693,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1398:69:10",
+                        "src": "1398:69:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_0687f8064c09ccf183090b5092c4485c730072a161487645a7e37b56cef356bb",
                           "typeString": "literal_string \"GovernorVotesQuorumFraction: quorumNumerator over quorumDenominator\""
@@ -1656,7 +1656,7 @@
                           "typeString": "literal_string \"GovernorVotesQuorumFraction: quorumNumerator over quorumDenominator\""
                         }
                       ],
-                      "id": 3217,
+                      "id": 1688,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1664,13 +1664,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1322:7:10",
+                      "src": "1322:7:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 3223,
+                    "id": 1694,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1678,31 +1678,31 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1322:155:10",
+                    "src": "1322:155:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3224,
+                  "id": 1695,
                   "nodeType": "ExpressionStatement",
-                  "src": "1322:155:10"
+                  "src": "1322:155:6"
                 },
                 {
                   "assignments": [
-                    3226
+                    1697
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3226,
+                      "id": 1697,
                       "mutability": "mutable",
                       "name": "oldQuorumNumerator",
-                      "nameLocation": "1496:18:10",
+                      "nameLocation": "1496:18:6",
                       "nodeType": "VariableDeclaration",
-                      "scope": 3238,
-                      "src": "1488:26:10",
+                      "scope": 1709,
+                      "src": "1488:26:6",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1710,10 +1710,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 3225,
+                        "id": 1696,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1488:7:10",
+                        "src": "1488:7:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1722,36 +1722,36 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3228,
+                  "id": 1699,
                   "initialValue": {
-                    "id": 3227,
+                    "id": 1698,
                     "name": "_quorumNumerator",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3147,
-                    "src": "1517:16:10",
+                    "referencedDeclaration": 1618,
+                    "src": "1517:16:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1488:45:10"
+                  "src": "1488:45:6"
                 },
                 {
                   "expression": {
-                    "id": 3231,
+                    "id": 1702,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 3229,
+                      "id": 1700,
                       "name": "_quorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3147,
-                      "src": "1543:16:10",
+                      "referencedDeclaration": 1618,
+                      "src": "1543:16:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1760,49 +1760,49 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 3230,
+                      "id": 1701,
                       "name": "newQuorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3214,
-                      "src": "1562:18:10",
+                      "referencedDeclaration": 1685,
+                      "src": "1562:18:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "1543:37:10",
+                    "src": "1543:37:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 3232,
+                  "id": 1703,
                   "nodeType": "ExpressionStatement",
-                  "src": "1543:37:10"
+                  "src": "1543:37:6"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 3234,
+                        "id": 1705,
                         "name": "oldQuorumNumerator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3226,
-                        "src": "1619:18:10",
+                        "referencedDeclaration": 1697,
+                        "src": "1619:18:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 3235,
+                        "id": 1706,
                         "name": "newQuorumNumerator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3214,
-                        "src": "1639:18:10",
+                        "referencedDeclaration": 1685,
+                        "src": "1639:18:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1820,18 +1820,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 3233,
+                      "id": 1704,
                       "name": "QuorumNumeratorUpdated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3153,
-                      "src": "1596:22:10",
+                      "referencedDeclaration": 1624,
+                      "src": "1596:22:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 3236,
+                    "id": 1707,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1839,39 +1839,39 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1596:62:10",
+                    "src": "1596:62:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3237,
+                  "id": 1708,
                   "nodeType": "EmitStatement",
-                  "src": "1591:67:10"
+                  "src": "1591:67:6"
                 }
               ]
             },
-            "id": 3239,
+            "id": 1710,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_updateQuorumNumerator",
-            "nameLocation": "1244:22:10",
+            "nameLocation": "1244:22:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3215,
+              "id": 1686,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3214,
+                  "id": 1685,
                   "mutability": "mutable",
                   "name": "newQuorumNumerator",
-                  "nameLocation": "1275:18:10",
+                  "nameLocation": "1275:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3239,
-                  "src": "1267:26:10",
+                  "scope": 1710,
+                  "src": "1267:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1879,10 +1879,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3213,
+                    "id": 1684,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1267:7:10",
+                    "src": "1267:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1891,101 +1891,101 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1266:28:10"
+              "src": "1266:28:6"
             },
             "returnParameters": {
-              "id": 3216,
+              "id": 1687,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1312:0:10"
+              "src": "1312:0:6"
             },
-            "scope": 3240,
-            "src": "1235:430:10",
+            "scope": 1711,
+            "src": "1235:430:6",
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "internal"
           }
         ],
-        "scope": 3241,
-        "src": "365:1302:10",
+        "scope": 1712,
+        "src": "365:1302:6",
         "usedErrors": []
       }
     ],
-    "src": "122:1546:10"
+    "src": "122:1546:6"
   },
   "legacyAST": {
     "absolutePath": "@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction.sol",
     "exportedSymbols": {
       "Address": [
-        6501
+        4931
       ],
       "Context": [
-        6523
+        4953
       ],
       "Counters": [
-        6597
+        5027
       ],
       "ECDSA": [
-        7404
+        5834
       ],
       "EIP712": [
-        7558
+        5988
       ],
       "ERC165": [
-        7582
+        6012
       ],
       "ERC20": [
-        3827
+        2257
       ],
       "ERC20Permit": [
-        4807
+        3237
       ],
       "ERC20Votes": [
-        4613
+        3043
       ],
       "Governor": [
-        1313
+        931
       ],
       "GovernorVotes": [
-        3139
+        1610
       ],
       "GovernorVotesQuorumFraction": [
-        3240
+        1711
       ],
       "IERC165": [
-        7594
+        6024
       ],
       "IERC20": [
-        3905
+        2335
       ],
       "IERC20Metadata": [
-        4638
+        3068
       ],
       "IERC20Permit": [
-        4843
+        3273
       ],
       "IGovernor": [
-        1549
+        1167
       ],
       "Math": [
-        7682
+        6112
       ],
       "SafeCast": [
-        8075
+        6505
       ],
       "Strings": [
-        6800
+        5230
       ],
       "Timers": [
-        7014
+        5444
       ]
     },
-    "id": 3241,
+    "id": 1712,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3141,
+        "id": 1612,
         "literals": [
           "solidity",
           "^",
@@ -1993,17 +1993,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "122:23:10"
+        "src": "122:23:6"
       },
       {
         "absolutePath": "@openzeppelin/contracts/governance/extensions/GovernorVotes.sol",
         "file": "./GovernorVotes.sol",
-        "id": 3142,
+        "id": 1613,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3241,
-        "sourceUnit": 3140,
-        "src": "147:29:10",
+        "scope": 1712,
+        "sourceUnit": 1611,
+        "src": "147:29:6",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -2012,51 +2012,51 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 3144,
+              "id": 1615,
               "name": "GovernorVotes",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3139,
-              "src": "414:13:10"
+              "referencedDeclaration": 1610,
+              "src": "414:13:6"
             },
-            "id": 3145,
+            "id": 1616,
             "nodeType": "InheritanceSpecifier",
-            "src": "414:13:10"
+            "src": "414:13:6"
           }
         ],
         "canonicalName": "GovernorVotesQuorumFraction",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 3143,
+          "id": 1614,
           "nodeType": "StructuredDocumentation",
-          "src": "178:186:10",
+          "src": "178:186:6",
           "text": " @dev Extension of {Governor} for voting weight extraction from an {ERC20Votes} token and a quorum expressed as a\n fraction of the total supply.\n _Available since v4.3._"
         },
         "fullyImplemented": false,
-        "id": 3240,
+        "id": 1711,
         "linearizedBaseContracts": [
-          3240,
-          3139,
-          1313,
-          1549,
-          7558,
-          7582,
-          7594,
-          6523
+          1711,
+          1610,
+          931,
+          1167,
+          5988,
+          6012,
+          6024,
+          4953
         ],
         "name": "GovernorVotesQuorumFraction",
-        "nameLocation": "383:27:10",
+        "nameLocation": "383:27:6",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 3147,
+            "id": 1618,
             "mutability": "mutable",
             "name": "_quorumNumerator",
-            "nameLocation": "450:16:10",
+            "nameLocation": "450:16:6",
             "nodeType": "VariableDeclaration",
-            "scope": 3240,
-            "src": "434:32:10",
+            "scope": 1711,
+            "src": "434:32:6",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2064,10 +2064,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 3146,
+              "id": 1617,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "434:7:10",
+              "src": "434:7:6",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2077,24 +2077,24 @@
           },
           {
             "anonymous": false,
-            "id": 3153,
+            "id": 1624,
             "name": "QuorumNumeratorUpdated",
-            "nameLocation": "479:22:10",
+            "nameLocation": "479:22:6",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 3152,
+              "id": 1623,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3149,
+                  "id": 1620,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "oldQuorumNumerator",
-                  "nameLocation": "510:18:10",
+                  "nameLocation": "510:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3153,
-                  "src": "502:26:10",
+                  "scope": 1624,
+                  "src": "502:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2102,10 +2102,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3148,
+                    "id": 1619,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "502:7:10",
+                    "src": "502:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2115,14 +2115,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 3151,
+                  "id": 1622,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "newQuorumNumerator",
-                  "nameLocation": "538:18:10",
+                  "nameLocation": "538:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3153,
-                  "src": "530:26:10",
+                  "scope": 1624,
+                  "src": "530:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2130,10 +2130,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3150,
+                    "id": 1621,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "530:7:10",
+                    "src": "530:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2142,26 +2142,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "501:56:10"
+              "src": "501:56:6"
             },
-            "src": "473:85:10"
+            "src": "473:85:6"
           },
           {
             "body": {
-              "id": 3162,
+              "id": 1633,
               "nodeType": "Block",
-              "src": "606:61:10",
+              "src": "606:61:6",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3159,
+                        "id": 1630,
                         "name": "quorumNumeratorValue",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3155,
-                        "src": "639:20:10",
+                        "referencedDeclaration": 1626,
+                        "src": "639:20:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2175,18 +2175,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 3158,
+                      "id": 1629,
                       "name": "_updateQuorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3239,
-                      "src": "616:22:10",
+                      "referencedDeclaration": 1710,
+                      "src": "616:22:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 3160,
+                    "id": 1631,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2194,20 +2194,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "616:44:10",
+                    "src": "616:44:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3161,
+                  "id": 1632,
                   "nodeType": "ExpressionStatement",
-                  "src": "616:44:10"
+                  "src": "616:44:6"
                 }
               ]
             },
-            "id": 3163,
+            "id": 1634,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -2215,18 +2215,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3156,
+              "id": 1627,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3155,
+                  "id": 1626,
                   "mutability": "mutable",
                   "name": "quorumNumeratorValue",
-                  "nameLocation": "584:20:10",
+                  "nameLocation": "584:20:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3163,
-                  "src": "576:28:10",
+                  "scope": 1634,
+                  "src": "576:28:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2234,10 +2234,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3154,
+                    "id": 1625,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "576:7:10",
+                    "src": "576:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2246,73 +2246,73 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "575:30:10"
+              "src": "575:30:6"
             },
             "returnParameters": {
-              "id": 3157,
+              "id": 1628,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "606:0:10"
+              "src": "606:0:6"
             },
-            "scope": 3240,
-            "src": "564:103:10",
+            "scope": 1711,
+            "src": "564:103:6",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 3170,
+              "id": 1641,
               "nodeType": "Block",
-              "src": "738:40:10",
+              "src": "738:40:6",
               "statements": [
                 {
                   "expression": {
-                    "id": 3168,
+                    "id": 1639,
                     "name": "_quorumNumerator",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3147,
-                    "src": "755:16:10",
+                    "referencedDeclaration": 1618,
+                    "src": "755:16:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3167,
-                  "id": 3169,
+                  "functionReturnParameters": 1638,
+                  "id": 1640,
                   "nodeType": "Return",
-                  "src": "748:23:10"
+                  "src": "748:23:6"
                 }
               ]
             },
             "functionSelector": "a7713a70",
-            "id": 3171,
+            "id": 1642,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "quorumNumerator",
-            "nameLocation": "682:15:10",
+            "nameLocation": "682:15:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3164,
+              "id": 1635,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "697:2:10"
+              "src": "697:2:6"
             },
             "returnParameters": {
-              "id": 3167,
+              "id": 1638,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3166,
+                  "id": 1637,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3171,
-                  "src": "729:7:10",
+                  "scope": 1642,
+                  "src": "729:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2320,10 +2320,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3165,
+                    "id": 1636,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "729:7:10",
+                    "src": "729:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2332,71 +2332,71 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "728:9:10"
+              "src": "728:9:6"
             },
-            "scope": 3240,
-            "src": "673:105:10",
+            "scope": 1711,
+            "src": "673:105:6",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3178,
+              "id": 1649,
               "nodeType": "Block",
-              "src": "851:27:10",
+              "src": "851:27:6",
               "statements": [
                 {
                   "expression": {
                     "hexValue": "313030",
-                    "id": 3176,
+                    "id": 1647,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "868:3:10",
+                    "src": "868:3:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_rational_100_by_1",
                       "typeString": "int_const 100"
                     },
                     "value": "100"
                   },
-                  "functionReturnParameters": 3175,
-                  "id": 3177,
+                  "functionReturnParameters": 1646,
+                  "id": 1648,
                   "nodeType": "Return",
-                  "src": "861:10:10"
+                  "src": "861:10:6"
                 }
               ]
             },
             "functionSelector": "97c3d334",
-            "id": 3179,
+            "id": 1650,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "quorumDenominator",
-            "nameLocation": "793:17:10",
+            "nameLocation": "793:17:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3172,
+              "id": 1643,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "810:2:10"
+              "src": "810:2:6"
             },
             "returnParameters": {
-              "id": 3175,
+              "id": 1646,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3174,
+                  "id": 1645,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3179,
-                  "src": "842:7:10",
+                  "scope": 1650,
+                  "src": "842:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2404,10 +2404,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3173,
+                    "id": 1644,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "842:7:10",
+                    "src": "842:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2416,22 +2416,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "841:9:10"
+              "src": "841:9:6"
             },
-            "scope": 3240,
-            "src": "784:94:10",
+            "scope": 1711,
+            "src": "784:94:6",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
             "baseFunctions": [
-              1456
+              1074
             ],
             "body": {
-              "id": 3199,
+              "id": 1670,
               "nodeType": "Block",
-              "src": "968:105:10",
+              "src": "968:105:6",
               "statements": [
                 {
                   "expression": {
@@ -2439,7 +2439,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 3197,
+                    "id": 1668,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2451,7 +2451,7 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 3193,
+                          "id": 1664,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2459,12 +2459,12 @@
                           "leftExpression": {
                             "arguments": [
                               {
-                                "id": 3189,
+                                "id": 1660,
                                 "name": "blockNumber",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3181,
-                                "src": "1011:11:10",
+                                "referencedDeclaration": 1652,
+                                "src": "1011:11:6",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -2479,32 +2479,32 @@
                                 }
                               ],
                               "expression": {
-                                "id": 3187,
+                                "id": 1658,
                                 "name": "token",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3109,
-                                "src": "986:5:10",
+                                "referencedDeclaration": 1580,
+                                "src": "986:5:6",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_ERC20Votes_$4613",
+                                  "typeIdentifier": "t_contract$_ERC20Votes_$3043",
                                   "typeString": "contract ERC20Votes"
                                 }
                               },
-                              "id": 3188,
+                              "id": 1659,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "getPastTotalSupply",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4144,
-                              "src": "986:24:10",
+                              "referencedDeclaration": 2574,
+                              "src": "986:24:6",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                 "typeString": "function (uint256) view external returns (uint256)"
                               }
                             },
-                            "id": 3190,
+                            "id": 1661,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2512,7 +2512,7 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "986:37:10",
+                            "src": "986:37:6",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2525,18 +2525,18 @@
                             "arguments": [],
                             "expression": {
                               "argumentTypes": [],
-                              "id": 3191,
+                              "id": 1662,
                               "name": "quorumNumerator",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3171,
-                              "src": "1026:15:10",
+                              "referencedDeclaration": 1642,
+                              "src": "1026:15:6",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                                 "typeString": "function () view returns (uint256)"
                               }
                             },
-                            "id": 3192,
+                            "id": 1663,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2544,28 +2544,28 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "1026:17:10",
+                            "src": "1026:17:6",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "986:57:10",
+                          "src": "986:57:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         }
                       ],
-                      "id": 3194,
+                      "id": 1665,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "985:59:10",
+                      "src": "985:59:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2577,18 +2577,18 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 3195,
+                        "id": 1666,
                         "name": "quorumDenominator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3179,
-                        "src": "1047:17:10",
+                        "referencedDeclaration": 1650,
+                        "src": "1047:17:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                           "typeString": "function () view returns (uint256)"
                         }
                       },
-                      "id": 3196,
+                      "id": 1667,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2596,53 +2596,53 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1047:19:10",
+                      "src": "1047:19:6",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "985:81:10",
+                    "src": "985:81:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3186,
-                  "id": 3198,
+                  "functionReturnParameters": 1657,
+                  "id": 1669,
                   "nodeType": "Return",
-                  "src": "978:88:10"
+                  "src": "978:88:6"
                 }
               ]
             },
             "functionSelector": "f8ce560a",
-            "id": 3200,
+            "id": 1671,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "quorum",
-            "nameLocation": "893:6:10",
+            "nameLocation": "893:6:6",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 3183,
+              "id": 1654,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "941:8:10"
+              "src": "941:8:6"
             },
             "parameters": {
-              "id": 3182,
+              "id": 1653,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3181,
+                  "id": 1652,
                   "mutability": "mutable",
                   "name": "blockNumber",
-                  "nameLocation": "908:11:10",
+                  "nameLocation": "908:11:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3200,
-                  "src": "900:19:10",
+                  "scope": 1671,
+                  "src": "900:19:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2650,10 +2650,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3180,
+                    "id": 1651,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "900:7:10",
+                    "src": "900:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2662,21 +2662,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "899:21:10"
+              "src": "899:21:6"
             },
             "returnParameters": {
-              "id": 3186,
+              "id": 1657,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3185,
+                  "id": 1656,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3200,
-                  "src": "959:7:10",
+                  "scope": 1671,
+                  "src": "959:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2684,10 +2684,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3184,
+                    "id": 1655,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "959:7:10",
+                    "src": "959:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2696,30 +2696,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "958:9:10"
+              "src": "958:9:6"
             },
-            "scope": 3240,
-            "src": "884:189:10",
+            "scope": 1711,
+            "src": "884:189:6",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3211,
+              "id": 1682,
               "nodeType": "Block",
-              "src": "1170:59:10",
+              "src": "1170:59:6",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3208,
+                        "id": 1679,
                         "name": "newQuorumNumerator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3202,
-                        "src": "1203:18:10",
+                        "referencedDeclaration": 1673,
+                        "src": "1203:18:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2733,18 +2733,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 3207,
+                      "id": 1678,
                       "name": "_updateQuorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3239,
-                      "src": "1180:22:10",
+                      "referencedDeclaration": 1710,
+                      "src": "1180:22:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 3209,
+                    "id": 1680,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2752,54 +2752,54 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1180:42:10",
+                    "src": "1180:42:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3210,
+                  "id": 1681,
                   "nodeType": "ExpressionStatement",
-                  "src": "1180:42:10"
+                  "src": "1180:42:6"
                 }
               ]
             },
             "functionSelector": "06f3f9e6",
-            "id": 3212,
+            "id": 1683,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 3205,
+                "id": 1676,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 3204,
+                  "id": 1675,
                   "name": "onlyGovernance",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 549,
-                  "src": "1155:14:10"
+                  "referencedDeclaration": 167,
+                  "src": "1155:14:6"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1155:14:10"
+                "src": "1155:14:6"
               }
             ],
             "name": "updateQuorumNumerator",
-            "nameLocation": "1088:21:10",
+            "nameLocation": "1088:21:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3203,
+              "id": 1674,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3202,
+                  "id": 1673,
                   "mutability": "mutable",
                   "name": "newQuorumNumerator",
-                  "nameLocation": "1118:18:10",
+                  "nameLocation": "1118:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3212,
-                  "src": "1110:26:10",
+                  "scope": 1683,
+                  "src": "1110:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2807,10 +2807,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3201,
+                    "id": 1672,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1110:7:10",
+                    "src": "1110:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2819,25 +2819,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1109:28:10"
+              "src": "1109:28:6"
             },
             "returnParameters": {
-              "id": 3206,
+              "id": 1677,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1170:0:10"
+              "src": "1170:0:6"
             },
-            "scope": 3240,
-            "src": "1079:150:10",
+            "scope": 1711,
+            "src": "1079:150:6",
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 3238,
+              "id": 1709,
               "nodeType": "Block",
-              "src": "1312:353:10",
+              "src": "1312:353:6",
               "statements": [
                 {
                   "expression": {
@@ -2847,18 +2847,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 3221,
+                        "id": 1692,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 3218,
+                          "id": 1689,
                           "name": "newQuorumNumerator",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3214,
-                          "src": "1343:18:10",
+                          "referencedDeclaration": 1685,
+                          "src": "1343:18:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2870,18 +2870,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 3219,
+                            "id": 1690,
                             "name": "quorumDenominator",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3179,
-                            "src": "1365:17:10",
+                            "referencedDeclaration": 1650,
+                            "src": "1365:17:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                               "typeString": "function () view returns (uint256)"
                             }
                           },
-                          "id": 3220,
+                          "id": 1691,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2889,14 +2889,14 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1365:19:10",
+                          "src": "1365:19:6",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "1343:41:10",
+                        "src": "1343:41:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2904,14 +2904,14 @@
                       },
                       {
                         "hexValue": "476f7665726e6f72566f74657351756f72756d4672616374696f6e3a2071756f72756d4e756d657261746f72206f7665722071756f72756d44656e6f6d696e61746f72",
-                        "id": 3222,
+                        "id": 1693,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1398:69:10",
+                        "src": "1398:69:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_0687f8064c09ccf183090b5092c4485c730072a161487645a7e37b56cef356bb",
                           "typeString": "literal_string \"GovernorVotesQuorumFraction: quorumNumerator over quorumDenominator\""
@@ -2930,7 +2930,7 @@
                           "typeString": "literal_string \"GovernorVotesQuorumFraction: quorumNumerator over quorumDenominator\""
                         }
                       ],
-                      "id": 3217,
+                      "id": 1688,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2938,13 +2938,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1322:7:10",
+                      "src": "1322:7:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 3223,
+                    "id": 1694,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2952,31 +2952,31 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1322:155:10",
+                    "src": "1322:155:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3224,
+                  "id": 1695,
                   "nodeType": "ExpressionStatement",
-                  "src": "1322:155:10"
+                  "src": "1322:155:6"
                 },
                 {
                   "assignments": [
-                    3226
+                    1697
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3226,
+                      "id": 1697,
                       "mutability": "mutable",
                       "name": "oldQuorumNumerator",
-                      "nameLocation": "1496:18:10",
+                      "nameLocation": "1496:18:6",
                       "nodeType": "VariableDeclaration",
-                      "scope": 3238,
-                      "src": "1488:26:10",
+                      "scope": 1709,
+                      "src": "1488:26:6",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2984,10 +2984,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 3225,
+                        "id": 1696,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1488:7:10",
+                        "src": "1488:7:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2996,36 +2996,36 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3228,
+                  "id": 1699,
                   "initialValue": {
-                    "id": 3227,
+                    "id": 1698,
                     "name": "_quorumNumerator",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3147,
-                    "src": "1517:16:10",
+                    "referencedDeclaration": 1618,
+                    "src": "1517:16:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1488:45:10"
+                  "src": "1488:45:6"
                 },
                 {
                   "expression": {
-                    "id": 3231,
+                    "id": 1702,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 3229,
+                      "id": 1700,
                       "name": "_quorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3147,
-                      "src": "1543:16:10",
+                      "referencedDeclaration": 1618,
+                      "src": "1543:16:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3034,49 +3034,49 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 3230,
+                      "id": 1701,
                       "name": "newQuorumNumerator",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3214,
-                      "src": "1562:18:10",
+                      "referencedDeclaration": 1685,
+                      "src": "1562:18:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "1543:37:10",
+                    "src": "1543:37:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 3232,
+                  "id": 1703,
                   "nodeType": "ExpressionStatement",
-                  "src": "1543:37:10"
+                  "src": "1543:37:6"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 3234,
+                        "id": 1705,
                         "name": "oldQuorumNumerator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3226,
-                        "src": "1619:18:10",
+                        "referencedDeclaration": 1697,
+                        "src": "1619:18:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 3235,
+                        "id": 1706,
                         "name": "newQuorumNumerator",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3214,
-                        "src": "1639:18:10",
+                        "referencedDeclaration": 1685,
+                        "src": "1639:18:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3094,18 +3094,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 3233,
+                      "id": 1704,
                       "name": "QuorumNumeratorUpdated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3153,
-                      "src": "1596:22:10",
+                      "referencedDeclaration": 1624,
+                      "src": "1596:22:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 3236,
+                    "id": 1707,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3113,39 +3113,39 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1596:62:10",
+                    "src": "1596:62:6",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3237,
+                  "id": 1708,
                   "nodeType": "EmitStatement",
-                  "src": "1591:67:10"
+                  "src": "1591:67:6"
                 }
               ]
             },
-            "id": 3239,
+            "id": 1710,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_updateQuorumNumerator",
-            "nameLocation": "1244:22:10",
+            "nameLocation": "1244:22:6",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3215,
+              "id": 1686,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3214,
+                  "id": 1685,
                   "mutability": "mutable",
                   "name": "newQuorumNumerator",
-                  "nameLocation": "1275:18:10",
+                  "nameLocation": "1275:18:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3239,
-                  "src": "1267:26:10",
+                  "scope": 1710,
+                  "src": "1267:26:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3153,10 +3153,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3213,
+                    "id": 1684,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1267:7:10",
+                    "src": "1267:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3165,27 +3165,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1266:28:10"
+              "src": "1266:28:6"
             },
             "returnParameters": {
-              "id": 3216,
+              "id": 1687,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1312:0:10"
+              "src": "1312:0:6"
             },
-            "scope": 3240,
-            "src": "1235:430:10",
+            "scope": 1711,
+            "src": "1235:430:6",
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "internal"
           }
         ],
-        "scope": 3241,
-        "src": "365:1302:10",
+        "scope": 1712,
+        "src": "365:1302:6",
         "usedErrors": []
       }
     ],
-    "src": "122:1546:10"
+    "src": "122:1546:6"
   },
   "compiler": {
     "name": "solc",
@@ -3193,7 +3193,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-02T23:49:38.127Z",
+  "updatedAt": "2021-12-06T04:33:11.068Z",
   "devdoc": {
     "details": "Extension of {Governor} for voting weight extraction from an {ERC20Votes} token and a quorum expressed as a fraction of the total supply. _Available since v4.3._",
     "kind": "dev",

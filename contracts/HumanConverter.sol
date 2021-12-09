@@ -2,9 +2,14 @@ pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./HumanStaker.sol";
+import "./HumanERC20.sol";
 
 // 수수료와 관련된 코드도 넣어야됨.
 contract HumanConverter is HumanStaker {
+
+
+  event AddConverter();
+  event AddRequest();
 
   enum STATUS { WAIT, CONVERT, SUCCESS, CANCEL, ERROR, COMPLAIN, END }
 
@@ -27,13 +32,15 @@ contract HumanConverter is HumanStaker {
     uint complainCount;
   }
 
+  uint converterFee;
+  address humanERC20StakerAddress;
   mapping (address => Converter) public converter;
   Request[] public requests;
 
   constructor () {}
 
   modifier onlyConverter() {
-    require(converter[msg.sender].total >= 0); // 이거 알아내야함 어떻게할지
+    require(converter[msg.sender].total >= 0);
     _;
   }
 
@@ -42,8 +49,18 @@ contract HumanConverter is HumanStaker {
     _;
   }
 
-  function addConverter(address converter) public onlyOwner {
-    
+  function addConverter() public {
+    require(converter[msg.sender].total < 1, "already converter!");
+    humanERC20.transferFrom(msg.sender, humanERC20StakerAddress, converterFee);
+    converter[msg.sender] = Converter(1, 0, 0, 0);
+  }
+
+  function setHumanERC20Staker(address _address) public onlyOwner {
+    humanERC20StakerAddress = _address;
+  } 
+
+  function setConverterFee(uint _balance) public onlyOwner {
+    converterFee = _balance;
   }
 
   function request(string memory _sourceUri, address _converter, string memory _humanNumber, uint _tokenId) public {

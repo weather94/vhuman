@@ -21,4 +21,8 @@ module.exports = async function (deployer) {
 
   humanConverter.setHumanERC721(humanNFT.address);
   humanConverter.setHumanERC20(humanERC20.address);
+  humanConverter.setHumanERC20Staker(humanERC20Staker.address);
+
+  humanConverter.setConverterFee(10000000 * 10 ** 18);
+  humanConverter.transferOwnership(humanGovernor.address);
 };
