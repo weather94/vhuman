@@ -9,6 +9,8 @@ contract HumanStaker is Ownable {
 
   event Stake(uint _tokenId);
   event Unstake(uint _tokenId);
+  event Use(uint _tokenId, address user);
+  event Withdraw(uint _tokenId, uint balance);
 
   struct StakingOption {
     uint fee;
@@ -56,12 +58,14 @@ contract HumanStaker is Ownable {
     StakingOption storage option = stakes[_tokenId];
     humanERC20.transferFrom(msg.sender, address(this), option.fee);
     option.balance += option.fee;
+    emit Use(_tokenId, msg.sender);
   }
 
-  function withdraw(uint _tokenId, uint balance) public onlyHumanOwner(_tokenId) {
+  function withdraw(uint _tokenId, uint _balance) public onlyHumanOwner(_tokenId) {
     StakingOption storage option = stakes[_tokenId];
-    require(option.balance >= balance);
-    option.balance -= balance;
-    humanERC20.transfer(msg.sender, balance);
+    require(option.balance >= _balance);
+    option.balance -= _balance;
+    humanERC20.transfer(msg.sender, _balance);
+    emit Withdraw(_tokenId, _balance);
   }
 }

@@ -7,9 +7,15 @@ import "./HumanERC20.sol";
 // 수수료와 관련된 코드도 넣어야됨.
 contract HumanConverter is HumanStaker {
 
-
-  event AddConverter();
-  event AddRequest();
+  event AddConverter(address converter);
+  event RemoveConverter(address converter);
+  event AddRequest(address client, address converter);
+  event WithdrawConverter(address converter, uint balance);
+  event ConvertStart(uint requestId, address converter);
+  event ConvertSuccess(uint requestId, string resultUri);
+  event ConvertConfirm(uint requestId);
+  event ConvertComplain(uint requestId);
+  event SetConverterFee(uint balance);
 
   enum STATUS { WAIT, CONVERT, SUCCESS, CANCEL, ERROR, COMPLAIN, END }
 
@@ -30,6 +36,7 @@ contract HumanConverter is HumanStaker {
     uint balance;
     uint convertCount;
     uint complainCount;
+    bool active;
   }
 
   uint converterFee;
@@ -40,7 +47,7 @@ contract HumanConverter is HumanStaker {
   constructor () {}
 
   modifier onlyConverter() {
-    require(converter[msg.sender].total >= 0);
+    require(converter[msg.sender].active == true);
     _;
   }
 
@@ -52,7 +59,12 @@ contract HumanConverter is HumanStaker {
   function addConverter() public {
     require(converter[msg.sender].total < 1, "already converter!");
     humanERC20.transferFrom(msg.sender, humanERC20StakerAddress, converterFee);
-    converter[msg.sender] = Converter(1, 0, 0, 0);
+    converter[msg.sender] = Converter(0, 0, 0, 0, true);
+  }
+
+  function removeConverter(address _address) public onlyOwner {
+    Converter storage _converter = converter[_address];
+    _converter.active = false;
   }
 
   function setHumanERC20Staker(address _address) public onlyOwner {
@@ -61,12 +73,21 @@ contract HumanConverter is HumanStaker {
 
   function setConverterFee(uint _balance) public onlyOwner {
     converterFee = _balance;
+    emit SetConverterFee(_balance);
+  }
+
+  function withdrawConverter(uint _balance) public {
+    require(converter[msg.sender].balance > _balance);
+    converter[msg.sender].balance -= _balance;
+    humanERC20.transferFrom(address(this), msg.sender, _balance);
+    emit WithdrawConverter(msg.sender, _balance);
   }
 
   function request(string memory _sourceUri, address _converter, string memory _humanNumber, uint _tokenId) public {
     // stakes[_tokenId];
     // 스테이킹중이거나, 본인 소유인지 확인
     requests.push(Request(msg.sender, _converter, _sourceUri, "", _humanNumber, STATUS.WAIT, _tokenId, 0, 0));
+    emit AddRequest(msg.sender, _converter);
   }
 
   function start(uint _requestId) public onlyConverter {
@@ -76,6 +97,7 @@ contract HumanConverter is HumanStaker {
     
     _request.status = STATUS.CONVERT;
     _request.converter = msg.sender;
+    emit ConvertStart(_requestId, msg.sender);
   }
 
   function success(uint _requestId, string memory _resultUri) public {
@@ -85,16 +107,19 @@ contract HumanConverter is HumanStaker {
     _request.status = STATUS.SUCCESS;
     _request.resultUri = _resultUri;
     _request.date = block.timestamp;
+    emit ConvertSuccess(_requestId, _resultUri);
   }
 
   function confirm(uint _requestId) public {
     Request storage _request = requests[_requestId];
     converter[_request.converter].convertCount += 1;
     _request.status = STATUS.END;
+    emit ConvertConfirm(_requestId);
   }
 
-  function complain(uint _requsetId) public {
-    Request storage _request = requests[_requsetId];
+  function complain(uint _requestId) public {
+    Request storage _request = requests[_requestId];
     converter[_request.converter].complainCount += 1;
+    emit ConvertComplain(_requestId);
   }
 }

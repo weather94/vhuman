@@ -6,6 +6,9 @@ import "./SHumanERC20.sol";
 
 contract HumanERC20Staker is Ownable {
 
+  event Stake(address _address, uint balance);
+  event Unstake(address _address, uint balance);
+
   HumanERC20 human;
   SHumanERC20 shuman;
   mapping (address => uint) stakes;
@@ -29,6 +32,7 @@ contract HumanERC20Staker is Ownable {
       mintBalance = balance/human.balanceOf(thisContract)*shuman.totalSupply();
     }
     shuman.mint(msg.sender, mintBalance);
+    emit Stake(msg.sender, balance);
   }
 
   function unstake(uint balance) public {
@@ -37,5 +41,6 @@ contract HumanERC20Staker is Ownable {
     uint returnBalance = human.balanceOf(thisContract)*balance/shuman.totalSupply();
     shuman.burn(balance);
     human.transfer(msg.sender, returnBalance);
+    emit Unstake(msg.sender, balance);
   }
 } 
