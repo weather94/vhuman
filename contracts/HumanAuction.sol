@@ -7,9 +7,9 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract HumanAuction is Ownable {
 
-  event AddAuction(uint _tokenId, uint deadline);
-  event AddBid(uint _tokenId, address bidder, uint balance, uint time);
-  event Execute(uint _tokenId);
+  event AddBid(uint tokenId, Bid bid);
+  event Execute(uint tokenId);
+  event AddAuction(uint tokenId, Auction auction);
 
   struct Auction {
     Bid lastBid;
@@ -48,10 +48,12 @@ contract HumanAuction is Ownable {
     humanERC20.transfer(_to, _balance);
   }
 
-  function addAuction(uint _tokenId, uint deadline) public onlyOwner {
+  function addAuction(uint _tokenId, uint deadline) public onlyOwner returns (uint) {
+    // deadline이 현재시간보다 더 뒤인지 확인 require
     humanERC721.transferFrom(msg.sender, address(this), _tokenId);
     auctions[_tokenId] = Auction(Bid(msg.sender, 0, block.timestamp), deadline, false);
-    emit AddAuction(_tokenId, deadline);
+    emit AddAuction(_tokenId, auctions[_tokenId]);
+    return _tokenId;
   }
 
   function bid(uint _tokenId, uint _balance) public {
@@ -63,7 +65,7 @@ contract HumanAuction is Ownable {
     humanERC20.transfer(auction.lastBid.bidder, auction.lastBid.balance); // 금액반환
     bids[_tokenId].push(auction.lastBid);
     auction.lastBid = Bid(msg.sender, _balance, current);
-    emit AddBid(_tokenId, msg.sender, _balance, current);
+    emit AddBid(_tokenId, auction.lastBid);
   }
 
   function execute(uint _tokenId) public {

@@ -1,15 +1,16 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "./HumanStaker.sol";
 import "./HumanERC20.sol";
 
 // 수수료와 관련된 코드도 넣어야됨.
-contract HumanConverter is HumanStaker {
+contract HumanConverter is HumanStaker, IERC721Receiver {
 
   event AddConverter(address converter);
   event RemoveConverter(address converter);
-  event AddRequest(address client, address converter);
+  event AddRequest(Request request);
   event WithdrawConverter(address converter, uint balance);
   event ConvertStart(uint requestId, address converter);
   event ConvertSuccess(uint requestId, string resultUri);
@@ -27,7 +28,6 @@ contract HumanConverter is HumanStaker {
     string resultUri;
     STATUS status;
     uint tokenId;
-    uint result;
     uint date;
   }
 
@@ -43,6 +43,7 @@ contract HumanConverter is HumanStaker {
   address humanERC20StakerAddress;
   mapping (address => Converter) public converter;
   Request[] public requests;
+  mapping (uint => uint[]) public requestsOfHuman;
 
   constructor () {}
 
@@ -54,6 +55,15 @@ contract HumanConverter is HumanStaker {
   modifier onlyConverterOf(uint _requestId) {
     require(requests[_requestId].converter == msg.sender);
     _;
+  }
+
+  function onERC721Received(
+      address operator,
+      address from,
+      uint256 tokenId,
+      bytes calldata data
+  ) public returns (bytes4) {
+    return IERC721Receiver.onERC721Received.selector;
   }
 
   function addConverter() public {
@@ -83,11 +93,18 @@ contract HumanConverter is HumanStaker {
     emit WithdrawConverter(msg.sender, _balance);
   }
 
-  function request(string memory _sourceUri, address _converter, string memory _humanNumber, uint _tokenId) public {
+  function request(uint _tokenId, string memory _sourceUri, address _converter, string memory _humanNumber) public {
     // stakes[_tokenId];
     // 스테이킹중이거나, 본인 소유인지 확인
-    requests.push(Request(msg.sender, _converter, _sourceUri, "", _humanNumber, STATUS.WAIT, _tokenId, 0, 0));
-    emit AddRequest(msg.sender, _converter);
+    if (shumanERC721.ownerOf(_tokenId) != address(0)) {
+      use(_tokenId);
+    } else {
+      require(humanERC721.ownerOf(_tokenId) == msg.sender);
+    }
+    Request memory _request = Request(msg.sender, _converter, _sourceUri, "", _humanNumber, STATUS.WAIT, _tokenId, block.timestamp);
+    requests.push(_request);
+    requestsOfHuman[_tokenId].push(requests.length - 1);
+    emit AddRequest(_request);
   }
 
   function start(uint _requestId) public onlyConverter {

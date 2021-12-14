@@ -5911,7 +5911,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-06T04:33:11.061Z",
+  "updatedAt": "2021-12-13T05:57:10.972Z",
   "devdoc": {
     "details": "Extension of {Governor} for simple, 3 options, vote counting. _Available since v4.3._",
     "kind": "dev",

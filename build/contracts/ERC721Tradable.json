@@ -584,7 +584,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.4.22 <0.9.0;\n\nimport \"@openzeppelin/contracts/token/ERC721/ERC721.sol\";\nimport \"@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol\";\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\nimport \"@openzeppelin/contracts/utils/math/SafeMath.sol\";\nimport \"@openzeppelin/contracts/utils/Strings.sol\";\n\nimport \"./common/meta-transactions/ContentMixin.sol\";\nimport \"./common/meta-transactions/NativeMetaTransaction.sol\";\n\ncontract OwnableDelegateProxy {}\n\ncontract ProxyRegistry {\n    mapping(address => OwnableDelegateProxy) public proxies;\n}\n\n/**\n * @title ERC721Tradable\n * ERC721Tradable - ERC721 contract that whitelists a trading address, and has minting functionality.\n */\nabstract contract ERC721Tradable is ContextMixin, ERC721Enumerable, NativeMetaTransaction, Ownable {\n    using SafeMath for uint256;\n\n    address proxyRegistryAddress;\n    uint256 private _currentTokenId = 0;\n\n    constructor(\n        string memory _name,\n        string memory _symbol,\n        address _proxyRegistryAddress\n    ) ERC721(_name, _symbol) {\n        proxyRegistryAddress = _proxyRegistryAddress;\n        _initializeEIP712(_name);\n    }\n\n    /**\n     * @dev Mints a token to an address with a tokenURI.\n     * @param _to address of the future owner of the token\n     */\n    function mintTo(address _to) internal onlyOwner {\n        uint256 newTokenId = _getNextTokenId();\n        _mint(_to, newTokenId);\n        _incrementTokenId();\n    }\n\n    /**\n     * @dev calculates the next token ID based on value of _currentTokenId\n     * @return uint256 for the next token ID\n     */\n    function _getNextTokenId() private view returns (uint256) {\n        return _currentTokenId.add(1);\n    }\n\n    /**\n     * @dev increments the value of _currentTokenId\n     */\n    function _incrementTokenId() private {\n        _currentTokenId++;\n    }\n\n    function baseTokenURI() virtual public pure returns (string memory);\n\n    function tokenURI(uint256 _tokenId) override public pure returns (string memory) {\n        return string(abi.encodePacked(baseTokenURI(), Strings.toString(_tokenId)));\n    }\n\n    /**\n     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.\n     */\n    function isApprovedForAll(address owner, address operator)\n        override\n        public\n        view\n        returns (bool)\n    {\n        // Whitelist OpenSea proxy contract for easy trading.\n        ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);\n        if (address(proxyRegistry.proxies(owner)) == operator) {\n            return true;\n        }\n\n        return super.isApprovedForAll(owner, operator);\n    }\n\n    /**\n     * This is used instead of msg.sender as transactions won't be sent by the original token owner, but by OpenSea.\n     */\n    function _msgSender()\n        internal\n        override\n        view\n        returns (address sender)\n    {\n        return ContextMixin.msgSender();\n    }\n}",
-  "sourcePath": "/Users/weather/workspace/blockchain/vhuman/contracts/ERC721Tradable.sol",
+  "sourcePath": "/Users/klleon/workspace/blockchain/vhuman/contracts/ERC721Tradable.sol",
   "ast": {
     "absolutePath": "project:/contracts/ERC721Tradable.sol",
     "exportedSymbols": {
@@ -595,10 +595,10 @@
         4953
       ],
       "ContextMixin": [
-        8021
+        8605
       ],
       "EIP712Base": [
-        8137
+        8721
       ],
       "ERC165": [
         6012
@@ -628,7 +628,7 @@
         4238
       ],
       "NativeMetaTransaction": [
-        8356
+        8940
       ],
       "Ownable": [
         104
@@ -730,7 +730,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 6993,
-        "sourceUnit": 8022,
+        "sourceUnit": 8606,
         "src": "335:53:32",
         "symbolAliases": [],
         "unitAlias": ""
@@ -742,7 +742,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 6993,
-        "sourceUnit": 8357,
+        "sourceUnit": 8941,
         "src": "389:62:32",
         "symbolAliases": [],
         "unitAlias": ""
@@ -848,7 +848,7 @@
               "id": 6835,
               "name": "ContextMixin",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8021,
+              "referencedDeclaration": 8605,
               "src": "747:12:32"
             },
             "id": 6836,
@@ -872,7 +872,7 @@
               "id": 6839,
               "name": "NativeMetaTransaction",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8356,
+              "referencedDeclaration": 8940,
               "src": "779:21:32"
             },
             "id": 6840,
@@ -906,9 +906,9 @@
         "linearizedBaseContracts": [
           6992,
           104,
-          8356,
-          8137,
-          8157,
+          8940,
+          8721,
+          8741,
           4576,
           4607,
           4104,
@@ -917,7 +917,7 @@
           6012,
           6024,
           4953,
-          8021
+          8605
         ],
         "name": "ERC721Tradable",
         "nameLocation": "729:14:32",
@@ -1092,7 +1092,7 @@
                       "name": "_initializeEIP712",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8061,
+                      "referencedDeclaration": 8645,
                       "src": "1129:17:32",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
@@ -2584,10 +2584,10 @@
                         "name": "ContextMixin",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8021,
+                        "referencedDeclaration": 8605,
                         "src": "2927:12:32",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ContextMixin_$8021_$",
+                          "typeIdentifier": "t_type$_t_contract$_ContextMixin_$8605_$",
                           "typeString": "type(contract ContextMixin)"
                         }
                       },
@@ -2598,7 +2598,7 @@
                       "lValueRequested": false,
                       "memberName": "msgSender",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8020,
+                      "referencedDeclaration": 8604,
                       "src": "2927:22:32",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -2711,10 +2711,10 @@
         4953
       ],
       "ContextMixin": [
-        8021
+        8605
       ],
       "EIP712Base": [
-        8137
+        8721
       ],
       "ERC165": [
         6012
@@ -2744,7 +2744,7 @@
         4238
       ],
       "NativeMetaTransaction": [
-        8356
+        8940
       ],
       "Ownable": [
         104
@@ -2846,7 +2846,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 6993,
-        "sourceUnit": 8022,
+        "sourceUnit": 8606,
         "src": "335:53:32",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2858,7 +2858,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 6993,
-        "sourceUnit": 8357,
+        "sourceUnit": 8941,
         "src": "389:62:32",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2964,7 +2964,7 @@
               "id": 6835,
               "name": "ContextMixin",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8021,
+              "referencedDeclaration": 8605,
               "src": "747:12:32"
             },
             "id": 6836,
@@ -2988,7 +2988,7 @@
               "id": 6839,
               "name": "NativeMetaTransaction",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 8356,
+              "referencedDeclaration": 8940,
               "src": "779:21:32"
             },
             "id": 6840,
@@ -3022,9 +3022,9 @@
         "linearizedBaseContracts": [
           6992,
           104,
-          8356,
-          8137,
-          8157,
+          8940,
+          8721,
+          8741,
           4576,
           4607,
           4104,
@@ -3033,7 +3033,7 @@
           6012,
           6024,
           4953,
-          8021
+          8605
         ],
         "name": "ERC721Tradable",
         "nameLocation": "729:14:32",
@@ -3208,7 +3208,7 @@
                       "name": "_initializeEIP712",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8061,
+                      "referencedDeclaration": 8645,
                       "src": "1129:17:32",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
@@ -4700,10 +4700,10 @@
                         "name": "ContextMixin",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8021,
+                        "referencedDeclaration": 8605,
                         "src": "2927:12:32",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ContextMixin_$8021_$",
+                          "typeIdentifier": "t_type$_t_contract$_ContextMixin_$8605_$",
                           "typeString": "type(contract ContextMixin)"
                         }
                       },
@@ -4714,7 +4714,7 @@
                       "lValueRequested": false,
                       "memberName": "msgSender",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8020,
+                      "referencedDeclaration": 8604,
                       "src": "2927:22:32",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -4823,7 +4823,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-06T04:33:11.185Z",
+  "updatedAt": "2021-12-13T05:57:11.043Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
