@@ -10,12 +10,13 @@ contract HumanConverter is HumanStaker, IERC721Receiver {
 
   event AddConverter(address converter);
   event RemoveConverter(address converter);
-  event AddRequest(Request request);
+  event AddRequest(uint requestId, Request request);
   event WithdrawConverter(address converter, uint balance);
-  event ConvertStart(uint requestId, address converter);
-  event ConvertSuccess(uint requestId, string resultUri);
-  event ConvertConfirm(uint requestId);
-  event ConvertComplain(uint requestId);
+  event ConvertAllow(uint requestId, Request request);
+  event ConvertStart(uint requestId, Request request);
+  event ConvertSuccess(uint requestId, Request request);
+  event ConvertConfirm(uint requestId, Request request);
+  event ConvertComplain(uint requestId, Request request);
   event SetConverterFee(uint balance);
 
   enum STATUS { WAIT, CONVERT, SUCCESS, CANCEL, ERROR, COMPLAIN, END }
@@ -29,6 +30,7 @@ contract HumanConverter is HumanStaker, IERC721Receiver {
     STATUS status;
     uint tokenId;
     uint date;
+    bool allowed;
   }
 
   struct Converter {
@@ -44,6 +46,7 @@ contract HumanConverter is HumanStaker, IERC721Receiver {
   mapping (address => Converter) public converter;
   Request[] public requests;
   mapping (uint => uint[]) public requestsOfHuman;
+  // mapping (uint => uint[]) public requestsOfConverter;
 
   constructor () {}
 
@@ -99,22 +102,35 @@ contract HumanConverter is HumanStaker, IERC721Receiver {
     if (shumanERC721.ownerOf(_tokenId) != address(0)) {
       use(_tokenId);
     } else {
-      require(humanERC721.ownerOf(_tokenId) == msg.sender);
+      require(humanERC721.ownerOf(_tokenId) == msg.sender, "not owner");
     }
-    Request memory _request = Request(msg.sender, _converter, _sourceUri, "", _humanNumber, STATUS.WAIT, _tokenId, block.timestamp);
+    bool allowed = !stakes[_tokenId].isManual;
+    
+    Request memory _request = Request(msg.sender, _converter, _sourceUri, _humanNumber, "", STATUS.WAIT, _tokenId, block.timestamp, allowed);
+    
+    uint requestId = requests.length;
     requests.push(_request);
-    requestsOfHuman[_tokenId].push(requests.length - 1);
-    emit AddRequest(_request);
+    requestsOfHuman[_tokenId].push(requestId);
+    emit AddRequest(requestId, _request);
+  }
+
+  function allow(uint _requestId) public {
+    Request storage _request = requests[_requestId];
+    require(_request.allowed == false);
+    require(_request.client == msg.sender);
+    _request.allowed = true;
+    emit ConvertAllow(_requestId, _request);
   }
 
   function start(uint _requestId) public onlyConverter {
     Request storage _request = requests[_requestId];
+    require(_request.allowed == true);
     require(_request.status == STATUS.WAIT);
     require(_request.converter == address(0) || _request.converter == msg.sender);
     
     _request.status = STATUS.CONVERT;
     _request.converter = msg.sender;
-    emit ConvertStart(_requestId, msg.sender);
+    emit ConvertStart(_requestId, _request);
   }
 
   function success(uint _requestId, string memory _resultUri) public {
@@ -124,19 +140,24 @@ contract HumanConverter is HumanStaker, IERC721Receiver {
     _request.status = STATUS.SUCCESS;
     _request.resultUri = _resultUri;
     _request.date = block.timestamp;
-    emit ConvertSuccess(_requestId, _resultUri);
+    emit ConvertSuccess(_requestId, _request);
   }
 
   function confirm(uint _requestId) public {
     Request storage _request = requests[_requestId];
+    require(_request.client == msg.sender);
     converter[_request.converter].convertCount += 1;
     _request.status = STATUS.END;
-    emit ConvertConfirm(_requestId);
+    StakingOption storage option = stakes[_request.tokenId];
+    option.balance += option.fee;
+    emit ConvertConfirm(_requestId, _request);
   }
 
   function complain(uint _requestId) public {
     Request storage _request = requests[_requestId];
+    require(_request.client == msg.sender);
     converter[_request.converter].complainCount += 1;
-    emit ConvertComplain(_requestId);
+    _request.status = STATUS.COMPLAIN;
+    emit ConvertComplain(_requestId, _request);
   }
 }
